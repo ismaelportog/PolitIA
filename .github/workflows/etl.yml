@@ -2,7 +2,7 @@ name: Daily Transcript ETL
 
 on:
   schedule:
-    - cron: '0 16 * * *'  # 10 AM CST (UTC-6)
+    - cron: '0 16 * * 1-5' 
   workflow_dispatch:
 
 jobs:
