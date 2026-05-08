@@ -2,7 +2,7 @@ name: Daily Transcript ETL
 
 on:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 16 * * *'  # 10 AM CST (UTC-6)
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
         run: uv sync
 
       - name: Run ETL
-        run: uv run python transcripts.py
+        run: uv run python data/transcripts/transcripts.py
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
